@@ -13,11 +13,12 @@ import OrderPay from './pages/orderPay'
 Vue.use(Router);
 
 export default new Router({
-    routers: [
+    routes: [
         {
             path: '/',
             name: 'home',
             component: Home,
+            redirect: '/index',
             children: [
                 {
                     path: '/index',
@@ -51,7 +52,7 @@ export default new Router({
                     name: 'orderPay',
                     component: OrderPay
                 }, {
-                    path: 'confirm',
+                    path: '/confirm',
                     name: 'orderConfirm',
                     component: OrderConfirm
                 }
