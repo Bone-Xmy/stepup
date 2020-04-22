@@ -123,13 +123,20 @@
 </template>>
 
 <script>
+  import { mapState } from 'vuex';
   export default {
     name: 'nav-header',
     data() {
       return {
-        username: '',
         phoneList: []
       }
+    },
+    computed: {
+      // username() {
+      //   return this.$store.state.username;
+      // }
+      // 等价上面的写法
+      ...mapState(['username'])
     },
     filters: {
       currency(val) {

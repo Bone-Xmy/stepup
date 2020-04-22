@@ -17,10 +17,25 @@ export default {
     }
   },
   mounted() {
-    this.axios.get('/mock/user/login.json').then((res) => {
-      this.res = res;
-    });
+    this.getUser();
+    this.getCartCount();
+    // this.axios.get('/mock/user/login.json').then((res) => {
+    //   this.res = res;
+    // });
+  },
+  methods: {
+    getUser() {
+      this.axios.get('/user').then((res) => {
+        this.$store.dispatch('saveUserName',res.username);
+      });
+    },
+    getCartCount() {
+      this.axios.get('/carts/products/sum').then(() => {
+        // to-do 保存到vuex里面
+      });
+    }
   }
+
 }
 </script>
 
