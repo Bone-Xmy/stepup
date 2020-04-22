@@ -36,7 +36,7 @@
                 <div class="item-info">
                   <h3>智能教学使用一体机进行上课，好好学习天天向上加油呀</h3>
                   <p>引进智能设备教学</p>
-                  <p class="price">看过：10</p>
+                  <p class="price" @click="test(item.id)">看过：10</p>
                 </div>
               </div>
             </div>
@@ -45,10 +45,23 @@
       </div>
     </div>
     <service-bar></service-bar>
-    </div>
+    <modal 
+      title="提示"
+      sureText="查看详情" 
+      btnType="3" 
+      modalType="middle" :showModal="showModal"
+      @submit="goToView"
+      @cancel="showModal=false"
+      >
+      <template v-slot:body>
+        <p>课程添加成功！</p>
+      </template>
+    </modal>
+  </div>
 </template>>
 <script>
   import ServiceBar from './../components/ServiceBar'
+  import Modal from './../components/Modal'
   import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
   import 'swiper/css/swiper.css'
 
@@ -58,6 +71,7 @@
       Swiper,
       SwiperSlide,
       ServiceBar,
+      Modal
     },
     data() {
       return {
@@ -143,7 +157,8 @@
               img: '/imgs/ads/ads-1.png'
             }
           ]
-        ]
+        ],
+        showModal: false
       }
     },
     mounted() {
@@ -159,6 +174,21 @@
         }).then((res) => {
           this.deviceList = [res.list.slice(0,4), res.list.slice(4,8)];
         })
+      },
+      test() {
+        this.showModal = true;
+        /*
+        this.axios.post('/carts', {
+          productId: id,
+          selected: true
+        }).then((res) => {
+
+        }).cache((res) => {
+          this.showModal = true;
+        })*/
+      },
+      goToView() {
+        this.$router.push('/cart');
       }
     }
   }
@@ -240,6 +270,7 @@
                   color: #f20a0a;
                   font-size: $fontJ;
                   font-weight: bold;
+                  // cursor: pointer;
                 }
               }
             }
