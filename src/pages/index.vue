@@ -34,7 +34,7 @@
                   <img :src="item.img" alt="">
                 </div>
                 <div class="item-info">
-                  <h3>智恩教学</h3>
+                  <h3>智能教学使用一体机进行上课，好好学习天天向上加油呀</h3>
                   <p>引进智能设备教学</p>
                   <p class="price">看过：10</p>
                 </div>
@@ -128,7 +128,21 @@
               id: 22,
               img: '/imgs/ads/ads-1.png'
             }
-          ],[1,2,3,4]
+          ],[
+            {
+              id: 22,
+              img: '/imgs/ads/ads-1.png'
+            }, {
+              id: 22,
+              img: '/imgs/ads/ads-1.png'
+            }, {
+              id: 22,
+              img: '/imgs/ads/ads-1.png'
+            }, {
+              id: 22,
+              img: '/imgs/ads/ads-1.png'
+            }
+          ]
         ]
       }
     },
@@ -200,21 +214,22 @@
             }
             .item {
               width: 23.8%;
-              height: 302px;
-              background-color: $colorG;
+              // background-color: $colorG;
               text-align: left;
               .item-img {
-                img {
-                  height: 238px;
+                img {                  
                   width: 100%;
+                  border-radius: 8px;
                 }
               }
               .item-info {
+                padding: 8px;
                 h3 {
-                  font-size: $fontJ;
+                  font-size: $fontI;
                   color: $colorB;
-                  line-height: 14px;
+                  line-height: 22px;
                   font-weight: bold;
+                  margin-bottom: 8px;
                 }
                 p {
                   color: $colorD;
