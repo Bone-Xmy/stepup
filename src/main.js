@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import axios from 'axios'
 import VuxAxios from 'vue-axios'
+import VueLazyLoad from 'vue-lazyload'
+import VueCookie from 'vue-cookie'
 import router from './router'
 import App from './App.vue'
 // import env from './env'
@@ -20,11 +22,16 @@ axios.interceptors.response.use(function(response) {
     window.location.href = '/#/login';
   } else {
     alert(res.msg);
+    return Promise.reject(res);
   }
 });
 
 
 Vue.use(VuxAxios, axios);
+Vue.use(VueCookie);
+Vue.use(VueLazyLoad, {
+  loading: '/imgs/loading-svg/loading-bars.svg'
+});
 Vue.config.productionTip = false
 
 new Vue({

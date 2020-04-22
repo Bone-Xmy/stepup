@@ -14,12 +14,12 @@
        </div>
        <!-- <div class="ads-box">
          <a :href="'/#/produce/' + item.id" v-for="(item, index) in adsList" :key="index">
-           <img :src="item.img" alt="">
+           <img v-lazy="item.img" alt="">
          </a>
        </div> -->
        <div class="banner">
          <a :href="'/#/produce/30'">
-           <img src="/imgs/banner-1.png" alt="">
+           <img v-lazy="'/imgs/banner-1.png'" alt="">
          </a>
        </div>
      </div>
@@ -31,7 +31,7 @@
             <div class="list" v-for="(arr, i) in deviceList" :key="i">
               <div class="item" v-for="(item, j) in arr" :key="j">
                 <div class="item-img">
-                  <img :src="item.img" alt="">
+                  <img v-lazy="item.img" alt="">
                 </div>
                 <div class="item-info">
                   <h3>智能教学使用一体机进行上课，好好学习天天向上加油呀</h3>
