@@ -40,7 +40,9 @@
         <h2>60帧超慢动作摄影<br/>慢慢回味每一瞬间的精彩</h2>
         <p>后置960帧电影般超慢动作视频，将眨眼间的美妙展现得淋漓尽致！<br/>更能AI 精准分析视频内容，15个场景智能匹配背景音效。</p>
         <div class="video-bg" @click="showSlide='slideDown'"></div>
-        <div class="video-box" v-show="showSlide">
+        <!-- v-show 只是隐藏，后台可能依然在播放中，所以改为 v-if -->
+        <!-- <div class="video-box" v-show="showSlide"> --> 
+        <div class="video-box" v-if="showSlide">
           <div class="overlay"></div>
           <div class="video" v-bind:class="showSlide">
             <span class="icon-close" @click="closeVideo"></span>
