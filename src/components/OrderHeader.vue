@@ -33,17 +33,19 @@
       display: inline-block;
       height: 55px;
       line-height: 55px;
-      margin-left: 54px;
     }
     .title {
-      font-size: 28px;
+      margin-left: 54px;
       float: left;
-      color: #333333;
+      h2 {
+        font-size: 28px;
+        color: #333333;
+      }
       span {
         font-size: 14px;
         margin-left: 17px;
         color: #999999;
-        font-weight: bold;
+        font-weight: 200;
       }
     }
     .username {

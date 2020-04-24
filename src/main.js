@@ -3,6 +3,8 @@ import axios from 'axios'
 import VuxAxios from 'vue-axios'
 import VueLazyLoad from 'vue-lazyload'
 import VueCookie from 'vue-cookie'
+import { Message } from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 import router from './router'
 import store from './store'
 import App from './App.vue'
@@ -27,7 +29,8 @@ axios.interceptors.response.use(function(response) {
     }
     return Promise.reject(res); // 抛出异常
   } else {
-    alert(res.msg);
+    // alert(res.msg);
+    Message.warning(res.msg);
     return Promise.reject(res);
   }
 });
@@ -38,6 +41,7 @@ Vue.use(VueCookie);
 Vue.use(VueLazyLoad, {
   loading: '/imgs/loading-svg/loading-bars.svg'
 });
+Vue.prototype.$message=Message
 Vue.config.productionTip = false
 
 new Vue({
