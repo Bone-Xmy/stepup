@@ -11,5 +11,9 @@ module.exports = {
                 }
             }
         }
+    },
+    productionSourceMap:false, // 打包后是否显示源码，上线的时候需要设置为false
+    chainWebpack: (config) => {
+        config.plugins.delete('prefetch');
     }
 }

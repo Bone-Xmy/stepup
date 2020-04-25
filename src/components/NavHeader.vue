@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-      <div class="nav-topbar">
+      <div class="nav-topbar" v-if="false">
         <div class="container">
           <div class="topbar-menu">
             <a href="javascript:;">商城</a>

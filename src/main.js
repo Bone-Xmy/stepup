@@ -33,6 +33,10 @@ axios.interceptors.response.use(function(response) {
     Message.warning(res.msg);
     return Promise.reject(res);
   }
+}, (error) => { // 拦截服务器异常（状态非 200）后的状态结果
+  let res = error.response
+  Message.error(res.data.message);
+  return Promise.reject(error);
 });
 
 
