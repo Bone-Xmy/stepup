@@ -212,15 +212,15 @@
         height: 72px;
         @include flex();
         .header-menu {
-          // display: inline-block;
-          width: 643px;
-          padding-left: 209px;
+          display: inline-block;
+          // width: 643px;
+          padding-left: 20px;
           .item-menu {
             display: inline-block;
             color: #333333;
             font-weight: bold;
             font-size: 16px;
-            line-height: 112px;
+            line-height: 72px;
             margin-right: 20px;
             span {
               cursor: pointer;
@@ -234,7 +234,7 @@
             }
             .children {
               position: absolute;
-              top: 112px;
+              top: 72px;
               left: 0;
               width: 1226px;
               height: 0;
