@@ -24,7 +24,7 @@
           </div>
           <div class="header-menu">
             <div class="item-menu">
-              <span>新闻</span>
+              <span>公司简介</span>
               <div class="children">
                 <ul>
                   <li class="product" v-for="(item, index) in phoneList" :key="index">
@@ -40,11 +40,15 @@
               </div>
             </div>
             <div class="item-menu">
-              <span>学校简介</span>
+              <span>我的产品</span>
               <!-- <div class="children"></div> -->
             </div>
             <div class="item-menu">
-              <span>关于我们</span>
+              <span>高升新闻</span>
+              <!-- <div class="children"></div> -->
+            </div>
+            <div class="item-menu">
+              <span>联系我们</span>
               <div class="children">
                 <ul>
                   <li class="product">
@@ -205,10 +209,10 @@
     .nav-header {
       .container {
         position: relative;
-        height: 112px;
+        height: 72px;
         @include flex();
         .header-menu {
-          display: inline-block;
+          // display: inline-block;
           width: 643px;
           padding-left: 209px;
           .item-menu {
