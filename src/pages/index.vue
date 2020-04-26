@@ -4,7 +4,7 @@
        <div class="swiper-box">
          <swiper :options="swiperOption">
            <swiper-slide v-for="(item, index) in slideList" :key="index">
-             <a :href="'/#/product/' + item.id"><img :src="item.img"></a>
+             <a :href="'/#/product/' + item.id"><img :src="item.imgUrl"></a>
            </swiper-slide>
            <!-- Optional controls -->
            <div class="swiper-pagination" slot="pagination"></div>
@@ -94,24 +94,7 @@
             prevEl: '.swiper-button-prev'
           }
         },
-        slideList: [
-          {
-            id: '42',
-            img: '/imgs/slider/slide-1.jpg'
-          }, {
-            id: '45',
-            img: '/imgs/slider/slide-2.jpg'
-          }, {
-            id: '46',
-            img: '/imgs/slider/slide-3.jpg'
-          }, {
-            id: '',
-            img: '/imgs/slider/slide-4.jpg'
-          }, {
-            id: '',
-            img: '/imgs/slider/slide-5.jpg'
-          }
-        ],
+        slideList: [],
         adsList: [
          {
            id: 33,
@@ -162,13 +145,19 @@
       }
     },
     mounted() {
-      this.init();
+      this.getSlide();
+      this.getProducts();
     },
     methods: {
-      init() {
+      getSlide() {
+        this.axios.get('/slide').then((res) => {
+          this.slideList = res;
+        })
+      },
+      getProducts() {
         this.axios.get('/products', {
           params: {
-            categoryId: 100012,
+            productId: 10001,
             pageSize: 8
           }
         }).then((res) => {

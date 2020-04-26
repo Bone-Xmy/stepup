@@ -20,9 +20,9 @@ axios.defaults.timeout = 8000; // 8 秒超时
 axios.interceptors.response.use(function(response) {
   let res = response.data;
   let path = location.hash;
-  if (res.status == 0) { 
+  if (res.status == 200) { 
     return res.data;
-  } else if(res.status == 10) {
+  } else if(res.status == 410) {
     // index 页面不需要跳转到登录，如果是其它页面则需要跳转到登录
     if (path != '#/index') {
       window.location.href = '/#/login';
