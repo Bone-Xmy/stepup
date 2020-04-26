@@ -210,7 +210,7 @@
       .container {
         position: relative;
         height: 72px;
-        @include flex();
+        @include flex(stretch, center);
         .header-menu {
           display: inline-block;
           // width: 643px;
