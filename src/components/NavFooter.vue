@@ -1,8 +1,8 @@
 <template>
     <div class="footer">
       <div class="footer-logo">
-        <img src="/imgs/logo-footer.png" alt="">
-        <p>高升教育</p>
+        <img src="/imgs/gaoshjy-logo.png" alt="">
+        <!-- <p>高升教育</p> -->
       </div>
       <div class="footer-link">
         <a href="http://www.zeyhs.com/" target="_blank">高升教育主页</a><span>|</span>
@@ -28,12 +28,13 @@
     font-size: 16px;
     text-align: center;
     .footer-logo {
-      margin-top: 46px;
-      margin-bottom: 31px;
+      margin-top: 5px;
+      margin-bottom: 5px;
       img {
-        width: 53px;
-        height: 36px;
-        margin-bottom: 13px;
+        // background-color: #ffffff;
+        width: 108px;
+        height: 108px;
+        margin-bottom: 9px;
       }
     }
     .footer-link {

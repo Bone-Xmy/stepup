@@ -209,18 +209,18 @@
     .nav-header {
       .container {
         position: relative;
-        height: 72px;
-        @include flex(stretch, center);
+        height: 104px;
+        @include flex();
         .header-menu {
           display: inline-block;
           // width: 643px;
           padding-left: 20px;
           .item-menu {
             display: inline-block;
-            color: #333333;
+            color: #444444;
             font-weight: bold;
             font-size: 16px;
-            line-height: 72px;
+            line-height: 104px;
             margin-right: 20px;
             span {
               cursor: pointer;
@@ -234,7 +234,7 @@
             }
             .children {
               position: absolute;
-              top: 72px;
+              top: 104px;
               left: 0;
               width: 1226px;
               height: 0;
