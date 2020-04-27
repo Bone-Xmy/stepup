@@ -46,10 +46,10 @@
         <h2>线上教学课堂</h2>
         <div class="wrapper">
           <div class="list-box">
-            <div class="list" v-for="(arr, i) in deviceList" :key="i">
+            <div class="list" v-for="(arr, i) in productImgList" :key="i">
               <div class="item" v-for="(item, j) in arr" :key="j">
                 <div class="item-img">
-                  <img v-lazy="item.img" alt="">
+                  <img v-lazy="item.imgUrl" alt="">
                 </div>
                 <div class="item-info">
                   <h3>智能教学使用一体机进行上课，好好学习天天向上加油呀</h3>
@@ -128,60 +128,26 @@
            img: '/imgs/ads/ads-4.jpg'
          }
         ],
-        deviceList: [
-          [
-            {
-              id: 22,
-              img: '/imgs/ads/ads-1.png'
-            }, {
-              id: 22,
-              img: '/imgs/ads/ads-1.png'
-            }, {
-              id: 22,
-              img: '/imgs/ads/ads-1.png'
-            }, {
-              id: 22,
-              img: '/imgs/ads/ads-1.png'
-            }
-          ],[
-            {
-              id: 22,
-              img: '/imgs/ads/ads-1.png'
-            }, {
-              id: 22,
-              img: '/imgs/ads/ads-1.png'
-            }, {
-              id: 22,
-              img: '/imgs/ads/ads-1.png'
-            }, {
-              id: 22,
-              img: '/imgs/ads/ads-1.png'
-            }
-          ]
-        ],
+        productImgList: [],
         showModal: false,
         showSlide: '',
 
       }
     },
     mounted() {
-      this.getSlide();
-      this.getProducts();
+      this.init();
     },
     methods: {
-      getSlide() {
-        this.axios.get('/slide').then((res) => {
-          this.slideList = res;
-        })
-      },
-      getProducts() {
-        this.axios.get('/products', {
+      init() {
+        this.axios.get('/index/init', {
           params: {
-            productId: 10001,
-            pageSize: 8
+            productId: 10001
+            // pageSize: 8
           }
         }).then((res) => {
-          this.deviceList = [res.list.slice(0,4), res.list.slice(4,8)];
+          this.slideList = res.slideList;
+          let list = res.productImgList;
+          this.productImgList = [list.slice(0,4), list.slice(4,8)];
         })
       },
       test() {
